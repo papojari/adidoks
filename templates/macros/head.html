@@ -1,9 +1,3 @@
-{% macro resource() %}
-  <link rel="preload" as="font" href="{{ get_url(path="fonts/vendor/jost/jost-v4-latin-regular.woff2") | safe }}" type="font/woff2" crossorigin>
-  <link rel="preload" as="font" href="{{ get_url(path="fonts/vendor/jost/jost-v4-latin-700.woff2") | safe }}"  type="font/woff2" crossorigin>
-{% endmacro %}
-
-
 {% macro stylesheet() %}
 <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
 {% endmacro %}
