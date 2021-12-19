@@ -2,17 +2,11 @@
 <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
 {% endmacro %}
 
+<meta name="theme-color" content="{{ config.extra.theme_color | default(value="#fff") }}">
 
-{% macro favicons() %}
-  <meta name="theme-color" content="{{ config.extra.theme_color | default(value="#fff") }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path="apple-touch-icon.png") | safe }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path="favicon-32x32.png") | safe }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path="favicon-16x16.png") | safe }}">
-  {% if not config.extra.is_netlify %}
+{% if not config.extra.is_netlify %}
     <link rel="manifest" href="{{ get_url(path="site.webmanifest") | safe }}">
-  {% endif %}
-{% endmacro %}
-
+{% endif %}
 
 {# type:          website or article, generally setting article for blog articles #}
 {# page_images:   using for the blog single template page #}
@@ -235,6 +229,10 @@
     {% endif %}
   }
 </script>
+<!--Source icons-->
+<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+
+<link rel="icon" type="image/svg" href="{{ get_url(path="icon.svg") | safe }}">
 
 {% if config.extra.ganalytics %}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{config.extra.ganalytics}}"></script>
